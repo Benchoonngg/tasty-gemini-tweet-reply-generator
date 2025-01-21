@@ -25,8 +25,8 @@ model = genai.GenerativeModel(
 
 # Upload images
 files = [
-    upload_to_gemini("Tweet Reply Data/Main Post/image_1.png", mime_type="image/png"),
-    upload_to_gemini("/Volumes/Hocson - External Device/Coding/Tasty Media/Twitter Reply/Dataset/Tweet Reply Data/Reply/image_4.png", mime_type="image/png"),
+    upload_to_gemini("/Volumes/Hocson - External Device/Dump - External/994b571084e018fc70c5290f7316181d.jpg", mime_type="image/png"),
+    upload_to_gemini("/Volumes/Hocson - External Device/Dump - External/6d30a47c4cba123611cb6d2f82150db9.jpg", mime_type="image/png"),
 ]
 
 # Generate and print response
