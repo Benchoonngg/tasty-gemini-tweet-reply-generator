@@ -1,7 +1,7 @@
 import google.generativeai as genai
 import json
 import os
-from typing import Union
+from typing import Union, List
 
 def load_prompts(jsonl_path: str) -> list:
     """Load prompts from a JSONL file (line by line)."""
@@ -11,18 +11,19 @@ def load_prompts(jsonl_path: str) -> list:
             prompts.append(json.loads(line.strip()))
     return prompts
 
-def generate_creative_content(model: genai.GenerativeModel) -> Union[str, genai.types.GenerateContentResponse]:
+def generate_creative_content(model: genai.GenerativeModel, image_uris: List[str]) -> Union[str, genai.types.GenerateContentResponse]:
     """
-    Generate creative content using the Gemini model.
+    Generate creative content using the Gemini model, incorporating images.
 
     Args:
-        model (genai.GenerativeModel): The initialized Gemini model
-        
+        model (genai.GenerativeModel): The initialized Gemini model.
+        image_uris (List[str]): A list of URIs for the uploaded images.
+
     Returns:
-        Union[str, genai.types.GenerateContentResponse]: The model's response text or object
-        
+        Union[str, genai.types.GenerateContentResponse]: The model's response text or object.
+
     Raises:
-        Exception: If content generation fails
+        Exception: If content generation fails.
     """
     try:
         prompts_data = load_prompts("config/prompts.jsonl")
@@ -30,13 +31,14 @@ def generate_creative_content(model: genai.GenerativeModel) -> Union[str, genai.
         # Extract instruction separately
         instruction = prompts_data[0]["instruction"]
 
-        # Convert to Gemini format
-        prompts = [instruction]
+        # Convert to Gemini format, incorporating image URIs
+        contents = [instruction]
         for example in prompts_data[1:]:  # Skip first line (instruction)
-            prompts.append(f"input {example['input']}")
-            prompts.append(f"output {example['output']}")
+            contents.append(f"input {example['input']}")
+            contents.extend(image_uris)  # Add all image URIs
+            contents.append(f"output {example['output']}")
 
-        response = model.generate_content(prompts)
+        response = model.generate_content(contents)
         return response
 
     except Exception as e:

@@ -12,26 +12,20 @@ if not api_key:
 print("API Key Loaded:", api_key[:5] + "*****")  # Mask for security
 genai.configure(api_key=api_key)
 
-def upload_to_gemini(path, mime_type=None):
-    """Uploads the given file to Gemini."""
-    file = genai.upload_file(path, mime_type=mime_type)
-    print(f"Uploaded file '{file.display_name}' as: {file.uri}")
-    return file
-
+# Load the model
 model = genai.GenerativeModel(
-    model_name="gemini-1.5-flash",  # gemini-2.0-flash-exp
+    model_name="gemini-1.5-flash",
     generation_config=generation_config,
 )
 
-# Upload images
-files = [
-    upload_to_gemini("/Volumes/Hocson - External Device/Dump - External/994b571084e018fc70c5290f7316181d.jpg", mime_type="image/png"),
-    upload_to_gemini("/Volumes/Hocson - External Device/Dump - External/6d30a47c4cba123611cb6d2f82150db9.jpg", mime_type="image/png"),
+# Upload the images and get their URIs
+image_files = [
+    genai.upload_file(path="Tweet Reply Data/Main Post/image_981.png", mime_type="image/jpeg"),
 ]
 
 # Generate and print response
 try:
-    response = generate_creative_content(model)
+    response = generate_creative_content(model, image_files)
     print("\nGenerated Responses:")
     print("-------------------")
     print(response.text)
