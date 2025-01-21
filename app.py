@@ -20,7 +20,7 @@ model = genai.GenerativeModel(
 
 # Upload the images and get their URIs
 image_files = [
-    genai.upload_file(path="Tweet Reply Data/Main Post/image_981.png", mime_type="image/jpeg"),
+    genai.upload_file(path="Tweet Reply Data/Main Post/image_1037.png", mime_type="image/jpeg"),
 ]
 
 # Generate and print response
