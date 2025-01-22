@@ -11,6 +11,14 @@ def load_prompts(jsonl_path: str) -> list:
             prompts.append(json.loads(line.strip()))
     return prompts
 
+def load_instructions(jsonl_path: str) -> list:
+    """Load prompts from a JSONL file (line by line)."""
+    prompts = []
+    with open(jsonl_path, "r", encoding="utf-8") as file:
+        for line in file:
+            prompts.append(json.loads(line.strip()))
+    return prompts
+
 def generate_creative_content(model: genai.GenerativeModel, image_uris: List[str]) -> Union[str, genai.types.GenerateContentResponse]:
     """
     Generate creative content using the Gemini model, incorporating images.
@@ -28,8 +36,14 @@ def generate_creative_content(model: genai.GenerativeModel, image_uris: List[str
     try:
         prompts_data = load_prompts("config/prompts.jsonl")
 
+        instructions = load_instructions("config/instructions.jsonl")
+
         # Extract instruction separately
-        instruction = prompts_data[0]["instruction"]
+        instruction = instructions[0]["instruction"]
+
+        # Multi-instruction example
+        #instruction = instructions[1]["instruction"]
+        #instruction = instructions[2]["instruction"]
 
         # Convert to Gemini format, incorporating image URIs
         contents = [instruction]
