@@ -1,5 +1,5 @@
 generation_config = {
-    "temperature": 0.1,
+    "temperature": 2,
     "top_p": 0.95,
     "top_k": 80,
     "max_output_tokens": 8192, 

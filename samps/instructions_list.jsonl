@@ -1,0 +1,33 @@
+#1
+{"instruction": "Strictly generate only 3 output for variety. STRICTLY NO EXPLANATION. STRICTLY Be Creative and Unique with the output."}
+- Best used for Main Post Image.
+- Similar in terms of length.
+- Generates replies based on image.
+Self-Rate : 8/10
+
+
+#2
+{"instruction": "Strictly generate only 8 output for variety. STRICTLY NO EXPLANATION. STRICTLY BE HUMOROUS and comment on the image using a 3rd person perspective."}
+- Best used for Main Post.
+- Much longer than the original.
+- Much Creative and directo with the image.
+Self-Rate : 7.8/10
+
+
+#3
+{"instruction": "Strictly generate only 8 output for variety. STRICTLY NO EXPLANATION. STRICTLY BE HUMOROUS and do a 3rd person short comment on (use output as reference)"}
+- Way too long and sarcastic.
+- Too direct.
+- Too many questions.
+Self-Rate : 4.5/10
+
+
+#4 
+{"instruction": "Strictly generate only 8 outputs."}
+{"instruction": "STRICTLY NO EXPLANATION."}
+{"instruction": "STRICTLY BE CREATIVE AND UNIQUE WITH THE OUTPUT AND NO OTHER MESSAGES SHOULD BE PRINTED."}
+- Best used for Model Post Image.
+- Need to modify generate_content.py (Multi-instruction example).
+- No major modification needed when used.
+Self-Rate : 9/10
+
