@@ -8,7 +8,7 @@ from src.generate_content import generate_creative_content
 
 # Initialize Streamlit app
 st.title("Tweet Reply Generator")
-st.write("Upload an image, and we'll generate a tweet reply for it.")
+st.write("Upload the MAIN POST to generate a tweet reply.")
 
 # Load the model
 api_key = load_environment()
