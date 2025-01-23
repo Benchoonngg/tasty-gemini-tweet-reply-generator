@@ -42,8 +42,8 @@ def generate_creative_content(model: genai.GenerativeModel, image_uris: List[str
         instruction = instructions[0]["instruction"]
 
         # Multi-instruction example
-        #instruction = instructions[1]["instruction"]
-        #instruction = instructions[2]["instruction"]
+        instruction = instructions[1]["instruction"]
+        instruction = instructions[2]["instruction"]
 
         # Convert to Gemini format, incorporating image URIs
         contents = [instruction]
