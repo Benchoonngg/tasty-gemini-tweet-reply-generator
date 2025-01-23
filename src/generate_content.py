@@ -34,28 +34,24 @@ def generate_creative_content(model: genai.GenerativeModel, image_uris: List[str
         Exception: If content generation fails.
     """
     try:
-        # Load user config
-        with open('config/user_config.json', 'r', encoding='utf-8') as file:
-            user_config = json.load(file)
-
         prompts_data = load_prompts("config/prompts.jsonl")
-        instruction = user_config['instruction']
+
+        instructions = load_instructions("config/instructions.jsonl")
+
+        # Extract instruction separately
+        instruction = instructions[0]["instruction"]
+
+        # Multi-instruction example
+        #instruction = instructions[1]["instruction"]
+        #instruction = instructions[2]["instruction"]
 
         # Convert to Gemini format, incorporating image URIs
         contents = [instruction]
-        for example in prompts_data:
+        for example in prompts_data[1:]:  # Skip first line (instruction)
             contents.append(f"input {example['input']}")
-            contents.extend(image_uris)
+            contents.extend(image_uris)  # Add all image URIs
             contents.append(f"output {example['output']}")
 
-        # Debugging: Print the generation parameters
-        print("Generation Parameters:", {
-            "temperature": user_config['temperature'],
-            "top_p": user_config['top_p'],
-            "top_k": user_config['top_k']
-        })
-
-        # Use the model's method correctly with a single contents argument
         response = model.generate_content(contents)
         return response
 
