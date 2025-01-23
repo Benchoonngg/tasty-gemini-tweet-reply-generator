@@ -1,7 +1,9 @@
+# Static configuration
+
 generation_config = {
-    "temperature": 2,
+    "temperature": 0.25,
     "top_p": 0.95,
-    "top_k": 80,
+    "top_k": 64,
     "max_output_tokens": 8192, 
     "response_mime_type": "text/plain",
 }

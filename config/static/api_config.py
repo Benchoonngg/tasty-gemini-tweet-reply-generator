@@ -1,7 +1,9 @@
+# Static configuration
+
 import os
 import google.generativeai as genai
 from dotenv import load_dotenv
-from config.generation_config import generation_config
+from config.static.generation_config import generation_config
 
 def load_model():
     model = genai.GenerativeModel(
