@@ -11,7 +11,7 @@ Self-Rate : 8/10
 - Best used for Main Post.
 - Much longer than the original.
 - Much Creative and directo with the image.
-Self-Rate : 7.8/10
+Self-Rate : 6/10
 
 
 #3
@@ -19,7 +19,8 @@ Self-Rate : 7.8/10
 - Way too long and sarcastic.
 - Too direct.
 - Too many questions.
-Self-Rate : 4.5/10
+- Too descriptive.
+Self-Rate : 4/10
 
 
 #4 
@@ -31,3 +32,10 @@ Self-Rate : 4.5/10
 - No major modification needed when used.
 Self-Rate : 7.5/10
 
+
+#5 
+{"instruction": "STRICTLY use the image uploaded as reference. STRICTLY 5 outputs for variety. STRICTLY humorous tone. STRICTLY 1 Emoji. STRICTLY NO EXPLANATIONS. STRICTLY NO PUNCTUATION."}
+- Most stable so far.
+- Actually uses output provided as reference.
+- Sometimes it generates outputs that are not related to the image.
+Self-Rate : 8.2/10
