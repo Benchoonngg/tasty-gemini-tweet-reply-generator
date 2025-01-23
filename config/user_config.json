@@ -1,0 +1,6 @@
+{
+    "instruction": "{\"instruction\": \"Strictly generate only 3 output for variety. STRICTLY NO EXPLANATION. STRICTLY Be Creative and Unique with the output.\"}",
+    "temperature": 2,
+    "top_p": 0.9,
+    "top_k": 50
+}

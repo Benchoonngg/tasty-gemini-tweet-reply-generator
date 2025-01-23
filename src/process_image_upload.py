@@ -1,7 +1,7 @@
 import os
 import tempfile
 import google.generativeai as genai
-from config.generation_config import generation_config
+from config.static.generation_config import generation_config
 from src.generate_content import generate_creative_content
 
 def process_uploaded_image(model, uploaded_file):
