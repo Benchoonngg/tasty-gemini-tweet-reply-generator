@@ -1,3 +1,5 @@
+# Static configuration
+
 generation_config = {
     "temperature": 0.25,
     "top_p": 0.95,
