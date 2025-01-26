@@ -1,5 +1,5 @@
 {
-    "instruction": "{\"instruction\": \"Strictly generate only 3 output for variety. STRICTLY NO EXPLANATION. STRICTLY Be Creative and Unique with the output.\"}",
+    "instruction": "STRICTLY use the image uploaded as reference. STRICTLY 5 outputs for variety. STRICTLY humorous tone. STRICTLY 1 Emoji. STRICTLY NO EXPLANATIONS. STRICTLY NO PUNCTUATION.",
     "temperature": 2,
     "top_p": 0.9,
     "top_k": 50
